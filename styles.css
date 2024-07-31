@@ -1,0 +1,142 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Etwas dunkler für besseren Kontrast */
+    color: #fff;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Sicherstellen, dass es über dem Inhalt liegt */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Schattierung für besseren Effekt */
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Wichtig für das Hamburger-Menü */
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.2); /* Leichter Hintergrund für den aktiven Link */
+}
+
+section {
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.9); /* Etwas durchsichtiger für besseren Kontrast */
+    border-radius: 8px;
+    margin: 90px auto 0; /* Platz für das feste Header-Menü und genug Abstand oben */
+    max-width: 1200px;
+    position: relative;
+    z-index: 1; /* Sicherstellen, dass der Inhalt über dem Menü liegt */
+    min-height: 600px; /* Sicherstellen, dass die Sektionen eine Mindesthöhe haben */
+}
+
+/* Versteckte Abschnitte */
+.hidden {
+    display: none;
+}
+
+/* Features, Blog, Workouts, etc. */
+.feature, .blog-post, .workout-plan, .meal-plan, .story, .faq-item, .membership-plan, .shop-item {
+    margin-bottom: 1em;
+    padding: 1em;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Shop Item */
+.shop-item {
+    text-align: center;
+}
+
+.shop-item-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 0.5em 1em;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.8); /* Hintergrundfarbe für das Menü */
+        position: absolute;
+        top: 60px; /* Direkt unter dem Header */
+        left: 0;
+        right: 0;
+        padding: 1em;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+}
